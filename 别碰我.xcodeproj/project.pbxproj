@@ -22,6 +22,7 @@
 		B40272061B7DF75300611233 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40272051B7DF75300611233 /* StartViewController.swift */; };
 		B40272081B7F4BDC00611233 /* stop.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40272071B7F4BDC00611233 /* stop.tif */; };
 		B48CF2BB1B8845B4006F4321 /* startbg.tif in Resources */ = {isa = PBXBuildFile; fileRef = B48CF2BA1B8845B4006F4321 /* startbg.tif */; };
+		B48CF2BD1B884620006F4321 /* startbg.tif in Resources */ = {isa = PBXBuildFile; fileRef = B48CF2BC1B884620006F4321 /* startbg.tif */; };
 		B4B943721B819023002EC84C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B943711B819023002EC84C /* HelpViewController.swift */; };
 		B4B9534A1B845F9600EC6D88 /* transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B953491B845F9600EC6D88 /* transition.swift */; };
 		B4B9534D1B85B5B000EC6D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B9534B1B85B5B000EC6D88 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		B40272051B7DF75300611233 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B40272071B7F4BDC00611233 /* stop.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = stop.tif; path = Images.xcassets/stop.tif; sourceTree = "<group>"; };
 		B48CF2BA1B8845B4006F4321 /* startbg.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = startbg.tif; path = Images.xcassets/startbg.tif; sourceTree = "<group>"; };
+		B48CF2BC1B884620006F4321 /* startbg.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = startbg.tif; path = Images.xcassets/startbg.tif; sourceTree = "<group>"; };
 		B4B943711B819023002EC84C /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B4B953491B845F9600EC6D88 /* transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transition.swift; sourceTree = "<group>"; };
 		B4B9534C1B85B5B000EC6D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				B48CF2BA1B8845B4006F4321 /* startbg.tif */,
 				B40271F51B7DF16800611233 /* ball.tif */,
 				B40271F91B7DF17400611233 /* ball2.tif */,
+				B48CF2BC1B884620006F4321 /* startbg.tif */,
 				B40271FB1B7DF17E00611233 /* back.tif */,
 				B40271F71B7DF16E00611233 /* ball1.tif */,
 				B40271CE1B7DEB6300611233 /* Info.plist */,
@@ -231,6 +234,7 @@
 			files = (
 				B40271F81B7DF16E00611233 /* ball1.tif in Resources */,
 				B4B9534D1B85B5B000EC6D88 /* Main.storyboard in Resources */,
+				B48CF2BD1B884620006F4321 /* startbg.tif in Resources */,
 				B40271DE1B7DEB6300611233 /* LaunchScreen.xib in Resources */,
 				B48CF2BB1B8845B4006F4321 /* startbg.tif in Resources */,
 				B40271FC1B7DF17E00611233 /* back.tif in Resources */,
