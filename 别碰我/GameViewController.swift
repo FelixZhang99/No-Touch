@@ -27,7 +27,7 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController,UIAccelerometerDelegate {
     var bestscore = 0
     var runtime=0
     var motionManager=CMMotionManager()
@@ -64,20 +64,21 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
             
-           
+           newscore=0
             
             switch difficulty{
             case 0:
                 bestscore = bestscore0
-                motion=60
+                motionManager.accelerometerUpdateInterval = 1/60
+                
                 mpoint=250
             case 1:
                 bestscore = bestscore1
-                motion=70
+                motionManager.accelerometerUpdateInterval = 1/80
                 mpoint=500
             case 2:
                 bestscore = bestscore2
-                motion=80
+                motionManager.accelerometerUpdateInterval = 1/100
                 mpoint=1000
             default:""
             }
@@ -89,10 +90,7 @@ class GameViewController: UIViewController {
             stopbuttom.addTarget(self, action: Selector("suspend"), forControlEvents: UIControlEvents.TouchUpInside)
             
             stop=true
-            
-            var timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("begin"), userInfo: nil, repeats: false)
-            
-            for show in ballarray{
+              for show in ballarray{
                 self.view.addSubview(show.globe)
                 show.globe.bounds.size = CGSizeMake(width/8, width/8)
             }
@@ -100,16 +98,22 @@ class GameViewController: UIViewController {
             needbegin=false
             
             
-            motionManager.accelerometerUpdateInterval = NSTimeInterval(1/motion)
+            
             
             scoreandbest()
             
             
-        
+            var timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("begin"), userInfo: nil, repeats: false)
+            
+
+            
             
             if (motionManager.accelerometerAvailable)  {
                 var queue=NSOperationQueue.currentQueue()
                 motionManager.startAccelerometerUpdatesToQueue(queue,withHandler: {( accelerometerData :CMAccelerometerData!,error:NSError!)in
+                    
+                  
+                    
                     
                    
                     
@@ -127,11 +131,15 @@ class GameViewController: UIViewController {
                     
                     if !stop{
                         
-                     
+                        var X:Double=0
+                        var Y:Double=0
+                        
                         self.stopbuttom.enabled = true
                         
-                        var X = accelerometerData.acceleration.x
-                        var Y = accelerometerData.acceleration.y
+                        X = accelerometerData.acceleration.x
+                        Y = accelerometerData.acceleration.y
+                        
+                        //println([X*50,Y*50])
                         
                         //gun
                         
@@ -196,6 +204,10 @@ class GameViewController: UIViewController {
                             ballarray.append(newball)
                             
                             self.view.addSubview(newball.globe)
+                            self.view.addSubview(newball.globe)
+                            self.view.addSubview(newball.globe)
+                            self.view.addSubview(newball.globe)
+                            self.view.addSubview(newball.globe)
                             
                             UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {()->Void in
                                 newball.globe.alpha=1
@@ -217,10 +229,11 @@ class GameViewController: UIViewController {
                         if score>self.bestscore{
                             self.bestscore=score
                         }
-                        
+                       
                         self.view.bringSubviewToFront(self.scores)
                         self.view.bringSubviewToFront(self.best)
                         self.view.bringSubviewToFront(self.stopbuttom)
+                        
                         
                        
                         self.scores.text="分数：\(score)"
@@ -268,6 +281,11 @@ class GameViewController: UIViewController {
                             pointlabel.text=pointview
                             
                             self.view.addSubview(pointlabel)
+                            self.view.addSubview(pointlabel)
+                            self.view.addSubview(pointlabel)
+                            self.view.addSubview(pointlabel)
+                            self.view.addSubview(pointlabel)
+                            
                             
                             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {()->Void in
                                 pointlabel.transform = CGAffineTransformMakeTranslation(0, -30)
