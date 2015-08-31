@@ -11,25 +11,11 @@ import SpriteKit
 import CoreMotion
 
 
-extension SKNode {
-    class func unarchiveFromFile(file : String) -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
-            
-            archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
-            archiver.finishDecoding()
-            return scene
-        } else {
-            return nil
-        }
-    }
-}
 
 class GameViewController: UIViewController,UIAccelerometerDelegate {
+    
     var bestscore = 0
-    var runtime=0
+    var runtime=1
     var motionManager=CMMotionManager()
     var temarray=ballarray
     
@@ -52,33 +38,23 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.
-            let skView = self.view as! SKView
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
+        
             
            newscore=0
             
             switch difficulty{
             case 0:
                 bestscore = bestscore0
-                motionManager.accelerometerUpdateInterval = 1/60
+                ballspeed=1.0
                 
                 mpoint=250
             case 1:
                 bestscore = bestscore1
-                motionManager.accelerometerUpdateInterval = 1/80
+                ballspeed=1.3
                 mpoint=500
             case 2:
                 bestscore = bestscore2
-                motionManager.accelerometerUpdateInterval = 1/100
+                ballspeed=1.6
                 mpoint=1000
             default:""
             }
@@ -97,24 +73,40 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
             
             needbegin=false
             
-            
+            var stop1step=false
             
             
             scoreandbest()
             
             
-            var timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("begin"), userInfo: nil, repeats: false)
-            
+           begin()
+        
+           motionManager.startAccelerometerUpdates()
+        
+           motionManager.startGyroUpdates()
 
-            
+        
+        
+        
+        
+            motionManager.accelerometerUpdateInterval = 1/60
             
             if (motionManager.accelerometerAvailable)  {
                 var queue=NSOperationQueue.currentQueue()
                 motionManager.startAccelerometerUpdatesToQueue(queue,withHandler: {( accelerometerData :CMAccelerometerData!,error:NSError!)in
                     
-                  
+                    
+                    if self.runtime==0{
+                        self.runtime++
+                        stop1step=false
+                    }
                     
                     
+                    if self.runtime>50{
+                        stop1step=true
+                        self.runtime=0
+                    }
+
                    
                     
                     if stop{
@@ -131,14 +123,16 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
                     
                     if !stop{
                         
+                        self.runtime++
+                        
                         var X:Double=0
                         var Y:Double=0
                         
                         self.stopbuttom.enabled = true
-                        
-                        X = accelerometerData.acceleration.x
-                        Y = accelerometerData.acceleration.y
-                        
+                        if stop1step{
+                        X = accelerometerData.acceleration.x * ballspeed
+                        Y = accelerometerData.acceleration.y * ballspeed
+                        }
                         //println([X*50,Y*50])
                         
                         //gun
@@ -184,7 +178,7 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
                             supertime=true
                             var newball=ball()
                             
-                            var colornumber=random()%3
+                            var colornumber=arc4random()%3
                             newball.globe.hidden=false
                             if colornumber == 0{
                                 newball.red()
@@ -203,11 +197,7 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
                             
                             ballarray.append(newball)
                             
-                            self.view.addSubview(newball.globe)
-                            self.view.addSubview(newball.globe)
-                            self.view.addSubview(newball.globe)
-                            self.view.addSubview(newball.globe)
-                            self.view.addSubview(newball.globe)
+                           self.showball(newball)
                             
                             UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {()->Void in
                                 newball.globe.alpha=1
@@ -280,11 +270,7 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
                             
                             pointlabel.text=pointview
                             
-                            self.view.addSubview(pointlabel)
-                            self.view.addSubview(pointlabel)
-                            self.view.addSubview(pointlabel)
-                            self.view.addSubview(pointlabel)
-                            self.view.addSubview(pointlabel)
+                           self.showpoint(pointlabel)
                             
                             
                             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {()->Void in
@@ -318,10 +304,16 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
                 
             }
             
-        }
+        
     }
     
+    func showpoint(label:UILabel){
+        self.view.addSubview(label)
+    }
     
+    func showball(balls:ball){
+        self.view.addSubview(balls.globe)
+    }
     
     //start
     
@@ -482,7 +474,10 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
     
     func gohelp(){
         
+        save()
         
+        motionManager.stopGyroUpdates()
+        motionManager.stopAccelerometerUpdates()
         
         var helpViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("help") as! UIViewController
         
@@ -493,6 +488,9 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
         
         
         save()
+        
+        motionManager.stopAccelerometerUpdates()
+        motionManager.stopGyroUpdates()
         
         self.presentViewController(startViewController, animated: false, completion: nil)
         
@@ -591,18 +589,6 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
     }
     
    
-
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
-        } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

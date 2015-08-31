@@ -95,6 +95,8 @@ class HelpViewController:UIViewController,UIScrollViewDelegate{
         
         pagecontrol.backgroundColor = UIColor.grayColor()
         
+        pagecontrol.layer.cornerRadius = 10
+        
         self.view.addSubview(pagecontrol)
     }
     
@@ -117,75 +119,6 @@ class HelpViewController:UIViewController,UIScrollViewDelegate{
 }
 
 
-class MyViewController:UIViewController,UIScrollViewDelegate{
-    
-    
-    var number:Int!
-    
-    let content = [
-        1:"通过倾斜手机使小球在屏幕上混动",
-        2:"使不同颜色的小球避免碰撞，撞击会扣分",
-        3:"一段时间后会有新的小球出现，将相同颜色的球靠近会合并加分",
-        4:"游戏目标就是尽可能获得更多的分",
-    ]
-    
-    init(number initnumber:Int){
-        self.number=initnumber
-        super.init(nibName:nil, bundle:nil)
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        
-        
-        var contentlabel = UILabel(frame: CGRectMake(width/10, height/5, 4*width/5, height/5))
-        
-        contentlabel.font = UIFont.systemFontOfSize(20)
-        
-        contentlabel.text = content[number]
-        
-        contentlabel.numberOfLines = 3
-        
-        self.view.addSubview(contentlabel)
-        
-        if number==4{
-            var button:UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-            
-            button.frame = CGRectMake(width/2-80 , 2*height/3, 160, 60)
-            
-            button.setTitle("开始游戏", forState: .Normal)
-            
-            button.backgroundColor = UIColor.brownColor()
-            
-            button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-            
-            button.titleLabel?.font = UIFont.systemFontOfSize(27, weight: 4)
-            
-            button.layer.cornerRadius = 10
-            
-            button.enabled = true
-            
-            self.view.addSubview(button)
-         
-            
-            button.addTarget(self, action: "gogame", forControlEvents: UIControlEvents.TouchUpInside)
-         
-        }
-        
-
-        self.view.setNeedsLayout()
-    }
-
-    func gogame(){
-        var helpViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sb") as! UIViewController
-        
-        self.presentViewController(helpViewController, animated: false, completion: nil)
-    }
-    
-}
 
 
 

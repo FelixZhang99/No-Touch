@@ -28,7 +28,7 @@ var bestscore1:Int = 0
 var bestscore2:Int = 0
 var needbegin=false
 var difficulty = 0
-
+var ballspeed=0.0
 
 class ball:UIView{
     

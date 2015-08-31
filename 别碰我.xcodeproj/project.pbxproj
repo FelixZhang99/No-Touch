@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B40271D01B7DEB6300611233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40271CF1B7DEB6300611233 /* AppDelegate.swift */; };
-		B40271D21B7DEB6300611233 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B40271D11B7DEB6300611233 /* GameScene.sks */; };
-		B40271D41B7DEB6300611233 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40271D31B7DEB6300611233 /* GameScene.swift */; };
 		B40271D61B7DEB6300611233 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40271D51B7DEB6300611233 /* GameViewController.swift */; };
 		B40271DB1B7DEB6300611233 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40271DA1B7DEB6300611233 /* Images.xcassets */; };
 		B40271DE1B7DEB6300611233 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40271DC1B7DEB6300611233 /* LaunchScreen.xib */; };
@@ -41,8 +39,6 @@
 		B40271CA1B7DEB6300611233 /* 别碰我.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "别碰我.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40271CE1B7DEB6300611233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B40271CF1B7DEB6300611233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B40271D11B7DEB6300611233 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		B40271D31B7DEB6300611233 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B40271D51B7DEB6300611233 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B40271DA1B7DEB6300611233 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B40271DD1B7DEB6300611233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -102,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				B40271CF1B7DEB6300611233 /* AppDelegate.swift */,
-				B40271D11B7DEB6300611233 /* GameScene.sks */,
-				B40271D31B7DEB6300611233 /* GameScene.swift */,
 				B40272051B7DF75300611233 /* StartViewController.swift */,
 				B40271D51B7DEB6300611233 /* GameViewController.swift */,
 				B4B943711B819023002EC84C /* HelpViewController.swift */,
@@ -237,7 +231,6 @@
 				B40272081B7F4BDC00611233 /* stop.tif in Resources */,
 				B40271F61B7DF16800611233 /* ball.tif in Resources */,
 				B40271DB1B7DEB6300611233 /* Images.xcassets in Resources */,
-				B40271D21B7DEB6300611233 /* GameScene.sks in Resources */,
 				B40271FA1B7DF17400611233 /* ball2.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +252,6 @@
 				B4B943721B819023002EC84C /* HelpViewController.swift in Sources */,
 				B40272061B7DF75300611233 /* StartViewController.swift in Sources */,
 				B40271F41B7DF03500611233 /* ball.swift in Sources */,
-				B40271D41B7DEB6300611233 /* GameScene.swift in Sources */,
 				B4B9534A1B845F9600EC6D88 /* transition.swift in Sources */,
 				B40271D61B7DEB6300611233 /* GameViewController.swift in Sources */,
 				B40271D01B7DEB6300611233 /* AppDelegate.swift in Sources */,
@@ -394,7 +386,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "别碰我/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -408,7 +400,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "别碰我/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
