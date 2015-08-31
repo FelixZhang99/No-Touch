@@ -270,7 +270,11 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
                             
                             pointlabel.text=pointview
                             
-                           self.showpoint(pointlabel)
+                            if width>600{
+                                pointlabel.font = UIFont.systemFontOfSize(20)
+                            }
+                            
+                            self.showpoint(pointlabel)
                             
                             
                             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {()->Void in
@@ -503,6 +507,7 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
     func scoreandbest(){
         
         
+        
         stopbuttom.setBackgroundImage(UIImage(named: "stop.tif"), forState: UIControlState.Normal)
         self.view.addSubview(stopbuttom)
         
@@ -521,6 +526,10 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
 
         best.textColor=UIColor.blackColor()
         self.view.addSubview(best)
+        if width>600{
+            scores.font = UIFont.systemFontOfSize(25)
+            best.font = UIFont.systemFontOfSize(25)
+        }
     }
     
     //321
@@ -564,6 +573,10 @@ class GameViewController: UIViewController,UIAccelerometerDelegate {
         label.textColor = UIColor.yellowColor()
         
         label.font = UIFont.systemFontOfSize(60, weight: 2.5)
+        
+        if width>600{
+            label.font = UIFont.systemFontOfSize(120, weight:2.5)
+        }
         
         self.view.addSubview(label)
         

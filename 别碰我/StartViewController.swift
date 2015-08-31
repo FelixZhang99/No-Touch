@@ -54,6 +54,8 @@ class StartViewController:UIViewController{
         
         height=self.view.bounds.height
         
+        println([width,height])
+        
         kaishi.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         
         kaishi.layer.cornerRadius = 50
@@ -62,7 +64,7 @@ class StartViewController:UIViewController{
         
         kaishi.center = self.view.center
         
-        self.view.setNeedsLayout()
+               self.view.setNeedsLayout()
      
         kaishi.addTarget(self, action: Selector("click"), forControlEvents: UIControlEvents.TouchDown)
     
@@ -104,8 +106,14 @@ class StartViewController:UIViewController{
         
         self.view.addSubview(label3)
         
-        
-        
+         if width>600{
+            kaishi.titleLabel?.font = UIFont.systemFontOfSize(35)
+            help.titleLabel?.font = UIFont.systemFontOfSize(20)
+            label1.font = UIFont.systemFontOfSize(20)
+            label2.font = UIFont.systemFontOfSize(20)
+            label3.font = UIFont.systemFontOfSize(20)
+            
+        }
         
         segment.selectedSegmentIndex = difficulty
         
