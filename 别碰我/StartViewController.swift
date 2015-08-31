@@ -58,23 +58,29 @@ class StartViewController:UIViewController{
         
         kaishi.layer.cornerRadius = 50
         
-        self.view.setNeedsLayout()
+        kaishi.frame = CGRectMake(0, 0, width/3, width/3)
         
+        kaishi.center = self.view.center
+        
+        self.view.setNeedsLayout()
+     
         kaishi.addTarget(self, action: Selector("click"), forControlEvents: UIControlEvents.TouchDown)
     
         help.addTarget(self, action: Selector("click2"), forControlEvents: UIControlEvents.TouchDown)
     
+        help.frame = CGRectMake(width/2-30, 9*height/10-10, 60, 20)
+        
         var levelarray:[String] = ["简单","困难","地狱"]
         
         var segment:UISegmentedControl = UISegmentedControl(items: levelarray)
         
-        segment.frame = CGRectMake(width/2-120, 2*height/3-20, 240, 40)
+        segment.frame = CGRectMake(width/6, 2*height/3, 2*width/3, height/15)
         
         self.view.addSubview(segment)
         
         load()
         
-        var label1:UILabel = UILabel(frame: CGRectMake(width/4-50, 3*height/4-25, 100, 50))
+        var label1:UILabel = UILabel(frame: CGRectMake(width/4-50, 4*height/5-25, 100, 50))
         
         label1.textAlignment = NSTextAlignment.Center
         
@@ -82,7 +88,7 @@ class StartViewController:UIViewController{
         
         self.view.addSubview(label1)
         
-        var label2:UILabel = UILabel(frame: CGRectMake(width/2-50, 3*height/4-25, 100, 50))
+        var label2:UILabel = UILabel(frame: CGRectMake(width/2-50, 4*height/5-25, 100, 50))
         
         label2.textAlignment = NSTextAlignment.Center
         
@@ -90,7 +96,7 @@ class StartViewController:UIViewController{
         
         self.view.addSubview(label2)
         
-        var label3:UILabel = UILabel(frame: CGRectMake(3*width/4-50, 3*height/4-25, 100, 50))
+        var label3:UILabel = UILabel(frame: CGRectMake(3*width/4-50, 4*height/5-25, 100, 50))
         
         label3.textAlignment = NSTextAlignment.Center
         
