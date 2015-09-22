@@ -109,7 +109,8 @@ class GameViewController: UIViewController {
             
             if (motionManager.accelerometerAvailable)  {
                 var queue=NSOperationQueue.currentQueue()
-                motionManager.startAccelerometerUpdatesToQueue(queue,withHandler: {( accelerometerData :CMAccelerometerData!,error:NSError!)in
+                
+                motionManager.startAccelerometerUpdatesToQueue(queue! , withHandler: {( accelerometerData :CMAccelerometerData!,error:NSError!) in
                     
                    
                     
