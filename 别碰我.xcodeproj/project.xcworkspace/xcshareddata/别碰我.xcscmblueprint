@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6C6850EB4CB3D12854F4E03A9471C7E3F56E9F63",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6C6850EB4CB3D12854F4E03A9471C7E3F56E9F63" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D18398BD-B32F-4448-84DD-84169C68D4F5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6C6850EB4CB3D12854F4E03A9471C7E3F56E9F63" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "别碰我",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "别碰我.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/FelixZhang99\/No-Touch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C6850EB4CB3D12854F4E03A9471C7E3F56E9F63"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/FelixZhang99\/No-Touch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C6850EB4CB3D12854F4E03A9471C7E3F56E9F63"
+    }
+  ]
+}

@@ -88,9 +88,9 @@ class ball:UIView{
         var speedX2=sball.speedX
         var speedY2=sball.speedY
         
-        var dirX=Double(self.globe.center.x - sball.globe.center.x)
-        var dirY=Double(sball.globe.center.y - self.globe.center.y)
-        var dir=sqrt(dirX*dirX+dirY*dirY)
+        let dirX=Double(self.globe.center.x - sball.globe.center.x)
+        let dirY=Double(sball.globe.center.y - self.globe.center.y)
+        let dir=sqrt(dirX*dirX+dirY*dirY)
         
         
         if dir < Double(size) {
@@ -102,8 +102,8 @@ class ball:UIView{
                 
                 //go
                 
-                var avgspeedX =  (abs(speedX - speedX2))/2
-                var avgspeedY =  (abs(speedY - speedY2))/2
+                let avgspeedX =  (abs(speedX - speedX2))/2
+                let avgspeedY =  (abs(speedY - speedY2))/2
                 
                 
                 if ((dirX>0)&&(speedX>0))||((dirX<0)&&(speedX<0)){
@@ -159,10 +159,10 @@ class ball:UIView{
                     speedY2 *= (-avgspeedY) / abs(speedY2)
                 }
                 
-                var temX=self.globe.center.x
-                var temY=self.globe.center.y
-                var temX2=sball.globe.center.x
-                var temY2=sball.globe.center.y
+                let temX=self.globe.center.x
+                let temY=self.globe.center.y
+                let temX2=sball.globe.center.x
+                let temY2=sball.globe.center.y
                 
                 
                 self.globe.center=CGPointMake(temX2 + CGFloat(dirX/dir * Double(size)), temY2 - CGFloat(dirY/dir * Double(size)))
@@ -306,7 +306,7 @@ let filemanager = NSFileManager.defaultManager()
 
 let Documenturl = filemanager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)
 
-let url = Documenturl[0] as! NSURL
+let url = Documenturl[0] 
 
 var error:NSErrorPointer = nil
 
@@ -353,9 +353,9 @@ func save(){
     
     nsarray2.writeToURL(file2, atomically: true)
     
-    println(nsarray)
+    print(nsarray)
     
-    println(nsarray2)
+    print(nsarray2)
     
     firsttime=false
     
@@ -363,7 +363,7 @@ func save(){
     
     nsarray3.writeToURL(file3, atomically: true)
     
-    println(nsarray3)
+    print(nsarray3)
 }
 
 
@@ -422,7 +422,7 @@ func load(){
     
     let temarray : Array = loadball as! [Double]
     
-    print(temarray)
+    print(temarray, terminator: "")
         
     var numberinarray=0
     
@@ -431,7 +431,7 @@ func load(){
     for i in 0...Int(temarray[0]-1){
         
         
-        var newball=ball()
+        let newball=ball()
     
         var posX:CGFloat=0
         
@@ -446,9 +446,9 @@ func load(){
             
             
             
-            println(numberinarray)
+            print(numberinarray)
             switch data{
-            case 1: var colornumber=temarray[numberinarray]
+            case 1: let colornumber=temarray[numberinarray]
             if colornumber == 0{
                 ballarray[i].red()
             }else if colornumber==1{

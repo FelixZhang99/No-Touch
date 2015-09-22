@@ -64,9 +64,9 @@ class StartViewController:UIViewController{
     
         help.addTarget(self, action: Selector("click2"), forControlEvents: UIControlEvents.TouchDown)
     
-        var levelarray:[String] = ["简单","困难","地狱"]
+        let levelarray:[String] = ["简单","困难","地狱"]
         
-        var segment:UISegmentedControl = UISegmentedControl(items: levelarray)
+        let segment:UISegmentedControl = UISegmentedControl(items: levelarray)
         
         segment.frame = CGRectMake(width/2-120, 2*height/3-20, 240, 40)
         
@@ -74,7 +74,7 @@ class StartViewController:UIViewController{
         
         load()
         
-        var label1:UILabel = UILabel(frame: CGRectMake(width/4-50, 3*height/4-25, 100, 50))
+        let label1:UILabel = UILabel(frame: CGRectMake(width/4-50, 3*height/4-25, 100, 50))
         
         label1.textAlignment = NSTextAlignment.Center
         
@@ -82,7 +82,7 @@ class StartViewController:UIViewController{
         
         self.view.addSubview(label1)
         
-        var label2:UILabel = UILabel(frame: CGRectMake(width/2-50, 3*height/4-25, 100, 50))
+        let label2:UILabel = UILabel(frame: CGRectMake(width/2-50, 3*height/4-25, 100, 50))
         
         label2.textAlignment = NSTextAlignment.Center
         
@@ -90,7 +90,7 @@ class StartViewController:UIViewController{
         
         self.view.addSubview(label2)
         
-        var label3:UILabel = UILabel(frame: CGRectMake(3*width/4-50, 3*height/4-25, 100, 50))
+        let label3:UILabel = UILabel(frame: CGRectMake(3*width/4-50, 3*height/4-25, 100, 50))
         
         label3.textAlignment = NSTextAlignment.Center
         
@@ -109,7 +109,7 @@ class StartViewController:UIViewController{
     }
     
     func segmentchange(sender:AnyObject?){
-        var segment:UISegmentedControl = sender as! UISegmentedControl
+        let segment:UISegmentedControl = sender as! UISegmentedControl
         
         difficulty = segment.selectedSegmentIndex
     
@@ -122,7 +122,7 @@ class StartViewController:UIViewController{
             
         }
         
-        var smallsize=self.view.bounds.width/8
+        let smallsize=self.view.bounds.width/8
         
         ball1.blue()
         ball1.numberinarray=0
@@ -142,7 +142,7 @@ class StartViewController:UIViewController{
             balls.randomspeed()
         }
         
-        println(difficulty)
+        print(difficulty)
     }
     
     func click(){

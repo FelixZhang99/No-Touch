@@ -24,7 +24,7 @@ class TransitionDelegate:NSObject,UIViewControllerTransitioningDelegate {
 
 class TransitionPresetationAnimator:NSObject,UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.3
     }
     
@@ -53,7 +53,7 @@ class TransitionPresetationAnimator:NSObject,UIViewControllerAnimatedTransitioni
 }
 
 class TransitionDismissalAnimator:NSObject,UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.3
     }
     

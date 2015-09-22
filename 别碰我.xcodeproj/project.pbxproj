@@ -15,14 +15,14 @@
 		B40271DE1B7DEB6300611233 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40271DC1B7DEB6300611233 /* LaunchScreen.xib */; };
 		B40271EA1B7DEB6400611233 /* ___Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40271E91B7DEB6400611233 /* ___Tests.swift */; };
 		B40271F41B7DF03500611233 /* ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40271F31B7DF03500611233 /* ball.swift */; };
-		B40271F61B7DF16800611233 /* ball.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40271F51B7DF16800611233 /* ball.tif */; };
 		B40271F81B7DF16E00611233 /* ball1.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40271F71B7DF16E00611233 /* ball1.tif */; };
 		B40271FA1B7DF17400611233 /* ball2.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40271F91B7DF17400611233 /* ball2.tif */; };
 		B40271FC1B7DF17E00611233 /* back.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40271FB1B7DF17E00611233 /* back.tif */; };
 		B40272061B7DF75300611233 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40272051B7DF75300611233 /* StartViewController.swift */; };
 		B40272081B7F4BDC00611233 /* stop.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40272071B7F4BDC00611233 /* stop.tif */; };
+		B40F50171BB1085900E99367 /* startbg.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40F50161BB1085900E99367 /* startbg.tif */; settings = {ASSET_TAGS = (); }; };
+		B40F50191BB1086600E99367 /* ball.tif in Resources */ = {isa = PBXBuildFile; fileRef = B40F50181BB1086600E99367 /* ball.tif */; settings = {ASSET_TAGS = (); }; };
 		B4B943721B819023002EC84C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B943711B819023002EC84C /* HelpViewController.swift */; };
-		B4B943741B819134002EC84C /* startbg.tif in Resources */ = {isa = PBXBuildFile; fileRef = B4B943731B819134002EC84C /* startbg.tif */; };
 		B4B9534A1B845F9600EC6D88 /* transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B953491B845F9600EC6D88 /* transition.swift */; };
 		B4B9534D1B85B5B000EC6D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B9534B1B85B5B000EC6D88 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -50,14 +50,14 @@
 		B40271E81B7DEB6400611233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B40271E91B7DEB6400611233 /* ___Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "___Tests.swift"; sourceTree = "<group>"; };
 		B40271F31B7DF03500611233 /* ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ball.swift; sourceTree = "<group>"; };
-		B40271F51B7DF16800611233 /* ball.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = ball.tif; path = Images.xcassets/ball.tif; sourceTree = "<group>"; };
 		B40271F71B7DF16E00611233 /* ball1.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = ball1.tif; path = Images.xcassets/ball1.tif; sourceTree = "<group>"; };
 		B40271F91B7DF17400611233 /* ball2.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = ball2.tif; path = Images.xcassets/ball2.tif; sourceTree = "<group>"; };
 		B40271FB1B7DF17E00611233 /* back.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = back.tif; path = Images.xcassets/back.tif; sourceTree = "<group>"; };
 		B40272051B7DF75300611233 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B40272071B7F4BDC00611233 /* stop.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = stop.tif; path = Images.xcassets/stop.tif; sourceTree = "<group>"; };
+		B40F50161BB1085900E99367 /* startbg.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = startbg.tif; path = ../../../../../Pictures/startbg.tif; sourceTree = "<group>"; };
+		B40F50181BB1086600E99367 /* ball.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = ball.tif; path = "../../别碰我/Images.xcassets/ball.tif"; sourceTree = "<group>"; };
 		B4B943711B819023002EC84C /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		B4B943731B819134002EC84C /* startbg.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = startbg.tif; path = ../../../../Pictures/startbg.tif; sourceTree = "<group>"; };
 		B4B953491B845F9600EC6D88 /* transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transition.swift; sourceTree = "<group>"; };
 		B4B9534C1B85B5B000EC6D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				B40272071B7F4BDC00611233 /* stop.tif */,
-				B40271F51B7DF16800611233 /* ball.tif */,
-				B4B943731B819134002EC84C /* startbg.tif */,
+				B40F50181BB1086600E99367 /* ball.tif */,
+				B40F50161BB1085900E99367 /* startbg.tif */,
 				B40271F91B7DF17400611233 /* ball2.tif */,
 				B40271FB1B7DF17E00611233 /* back.tif */,
 				B40271F71B7DF16E00611233 /* ball1.tif */,
@@ -192,6 +192,8 @@
 		B40271C21B7DEB6300611233 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Zhangfutian;
 				TargetAttributes = {
@@ -231,13 +233,13 @@
 			files = (
 				B40271F81B7DF16E00611233 /* ball1.tif in Resources */,
 				B4B9534D1B85B5B000EC6D88 /* Main.storyboard in Resources */,
+				B40F50171BB1085900E99367 /* startbg.tif in Resources */,
 				B40271DE1B7DEB6300611233 /* LaunchScreen.xib in Resources */,
 				B40271FC1B7DF17E00611233 /* back.tif in Resources */,
-				B4B943741B819134002EC84C /* startbg.tif in Resources */,
 				B40272081B7F4BDC00611233 /* stop.tif in Resources */,
-				B40271F61B7DF16800611233 /* ball.tif in Resources */,
 				B40271DB1B7DEB6300611233 /* Images.xcassets in Resources */,
 				B40271D21B7DEB6300611233 /* GameScene.sks in Resources */,
+				B40F50191BB1086600E99367 /* ball.tif in Resources */,
 				B40271FA1B7DF17400611233 /* ball2.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

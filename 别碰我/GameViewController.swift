@@ -14,8 +14,8 @@ import CoreMotion
 extension SKNode {
     class func unarchiveFromFile(file : String) -> SKNode? {
         if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+            let sceneData = try! NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+            let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
     var stopbuttom=UIButton(frame: CGRectMake(width-60, 20, 50, 40))
     var buttonshow=false
     
-    var startViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("start") as! UIViewController
+    var startViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("start") 
     
     let viewTransitionDelegate = TransitionDelegate()
     
@@ -310,7 +310,7 @@ class GameViewController: UIViewController {
     func startgame(){
         
         
-        var smallsize=self.view.bounds.width/8
+        let smallsize=self.view.bounds.width/8
         
         needbegin=false
         
@@ -376,7 +376,7 @@ class GameViewController: UIViewController {
     
     
     func mybutton(txt:String,y:CGFloat)-> UIButton{
-        var button : UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        let button : UIButton = UIButton(type: UIButtonType.System)
         
         button.frame = CGRectMake(width, y, 120, 40)
         
@@ -466,7 +466,7 @@ class GameViewController: UIViewController {
         
         
         
-        var helpViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("help") as! UIViewController
+        let helpViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("help") 
         
         self.presentViewController(helpViewController, animated: false, completion: nil)
     }
@@ -539,7 +539,7 @@ class GameViewController: UIViewController {
     }
     
     func jumpnumber(number:String){
-        var label=UILabel(frame: CGRectMake(width/2-60, height/2-60, 120, 120))
+        let label=UILabel(frame: CGRectMake(width/2-60, height/2-60, 120, 120))
         label.textAlignment = NSTextAlignment.Center
 
         
@@ -578,11 +578,11 @@ class GameViewController: UIViewController {
         return true
     }
 
-    override func supportedInterfaceOrientations() -> Int {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+            return UIInterfaceOrientationMask.AllButUpsideDown
         } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
+            return UIInterfaceOrientationMask.All
         }
     }
 

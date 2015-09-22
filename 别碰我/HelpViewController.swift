@@ -40,23 +40,23 @@ class HelpViewController:UIViewController,UIScrollViewDelegate{
         
         scrollView.delegate = self
         
-        var View1:UIView = UIView(frame: CGRectMake(0, 0, width, height-100))
+        let View1:UIView = UIView(frame: CGRectMake(0, 0, width, height-100))
         scrollView.addSubview(View1)
             
-        var View2:UIView = UIView(frame: CGRectMake(width, 0, width, height-100))
+        let View2:UIView = UIView(frame: CGRectMake(width, 0, width, height-100))
         scrollView.addSubview(View2)
     
-        var View3:UIView = UIView(frame: CGRectMake(width*2, 0, width, height-100))
+        let View3:UIView = UIView(frame: CGRectMake(width*2, 0, width, height-100))
         scrollView.addSubview(View3)
         
-        var View4:UIView = UIView(frame: CGRectMake(width*3, 0, width, height-100))
+        let View4:UIView = UIView(frame: CGRectMake(width*3, 0, width, height-100))
         scrollView.addSubview(View4)
         
         var viewarray = [View1,View2,View3,View4]
         
         for i in 0 ... pagenumber-1 {
         
-            var contentlabel = UILabel(frame: CGRectMake(width / 10, height/5, 4*width/5, height/5))
+            let contentlabel = UILabel(frame: CGRectMake(width / 10, height/5, 4*width/5, height/5))
         
             contentlabel.font = UIFont.systemFontOfSize(20)
     
@@ -67,7 +67,7 @@ class HelpViewController:UIViewController,UIScrollViewDelegate{
             viewarray[i].addSubview(contentlabel)
         }
         
-        var button:UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        let button:UIButton = UIButton(type: UIButtonType.System)
         
         button.frame = CGRectMake(width/2-80 , 2*height/3, 160, 60)
         
@@ -100,17 +100,17 @@ class HelpViewController:UIViewController,UIScrollViewDelegate{
     
     
     func gogame(){
-        var gameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sb") as! UIViewController
+        let gameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sb") 
         
         self.presentViewController(gameViewController, animated: false, completion: nil)
     }
     
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        var offX:CGFloat = scrollView.contentOffset.x
+        let offX:CGFloat = scrollView.contentOffset.x
         
-        var index:Int = Int(offX/width)
-        println(index)
+        let index:Int = Int(offX/width)
+        print(index)
         pagecontrol.currentPage = index
     }
     
@@ -134,14 +134,14 @@ class MyViewController:UIViewController,UIScrollViewDelegate{
         super.init(nibName:nil, bundle:nil)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         
         
-        var contentlabel = UILabel(frame: CGRectMake(width/10, height/5, 4*width/5, height/5))
+        let contentlabel = UILabel(frame: CGRectMake(width/10, height/5, 4*width/5, height/5))
         
         contentlabel.font = UIFont.systemFontOfSize(20)
         
@@ -152,7 +152,7 @@ class MyViewController:UIViewController,UIScrollViewDelegate{
         self.view.addSubview(contentlabel)
         
         if number==4{
-            var button:UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let button:UIButton = UIButton(type: UIButtonType.System)
             
             button.frame = CGRectMake(width/2-80 , 2*height/3, 160, 60)
             
@@ -180,7 +180,7 @@ class MyViewController:UIViewController,UIScrollViewDelegate{
     }
 
     func gogame(){
-        var helpViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sb") as! UIViewController
+        let helpViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sb") 
         
         self.presentViewController(helpViewController, animated: false, completion: nil)
     }
